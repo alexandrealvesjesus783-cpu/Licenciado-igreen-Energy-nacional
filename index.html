@@ -1,228 +1,530 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Oportunidade no Mercado de Energia</title>
-
-<!-- GOOGLE ADS TAG -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11190163063"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-11190163063');
-</script>
-
+<title>iGreen Energy — Seja um Licenciado | Renda recorrente com transição energética</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-body {margin:0;font-family:Arial;background:#f4f4f4;}
+  :root{
+    --forest:#062617;
+    --forest-2:#0B3D25;
+    --green:#22C55E;
+    --green-deep:#159A48;
+    --lime:#C6FF4D;
+    --mint:#E8FFF0;
+    --paper:#F5FBF7;
+    --ink:#0B1F16;
+    --ink-soft:#3E5A4A;
+    --line:rgba(11,31,22,0.12);
+    --radius:20px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Manrope', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{
+    font-family:'Archivo Black', sans-serif;
+    line-height:1.02;
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:12px;
+  }
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  .wrap{max-width:480px; margin:0 auto; padding:0 22px;}
+  @media(min-width:900px){ .wrap{max-width:960px;} }
 
-.hero {
-background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
-background-size:cover;
-color:white;
-padding:100px 20px;
-text-align:center;
-}
+  /* ---------- marquee ---------- */
+  .marquee{
+    background:var(--lime);
+    color:var(--forest);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:9px 0;
+    border-bottom:2px solid var(--forest);
+  }
+  .marquee-track{
+    display:inline-flex;
+    animation:scroll 18s linear infinite;
+  }
+  .marquee-track span{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:12.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:0 18px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .marquee-track span::after{ content:"●"; font-size:6px; opacity:0.6; }
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @media (prefers-reduced-motion: reduce){ .marquee-track{ animation:none; } }
 
-.hero h1 {font-size:34px;max-width:800px;margin:auto;}
-.hero p {font-size:18px;margin:20px 0;}
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(6,38,23,0.92);
+    backdrop-filter:blur(8px);
+  }
+  .topbar-inner{
+    max-width:480px; margin:0 auto; padding:14px 22px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  @media(min-width:900px){ .topbar-inner{max-width:960px;} }
+  .logo{
+    font-family:'Archivo Black', sans-serif;
+    font-size:15px; color:#fff;
+    display:flex; align-items:center; gap:8px;
+  }
+  .logo-dot{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--lime);
+    box-shadow:0 0 0 4px rgba(198,255,77,0.2);
+  }
+  .top-cta{
+    font-size:12.5px; font-weight:800;
+    background:var(--lime); color:var(--forest);
+    padding:9px 14px; border-radius:999px;
+    text-decoration:none; white-space:nowrap;
+  }
 
-.btn {
-background:#ff7a00;
-padding:15px 30px;
-color:white;
-text-decoration:none;
-border-radius:6px;
-display:inline-block;
-margin-top:20px;
-font-weight:bold;
-}
+  /* ---------- hero ---------- */
+  .hero{
+    background:radial-gradient(120% 100% at 50% -10%, var(--forest-2) 0%, var(--forest) 60%);
+    color:#fff;
+    padding:38px 0 40px;
+    position:relative;
+  }
+  .hero .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(198,255,77,0.12);
+    border:1px solid rgba(198,255,77,0.35);
+    color:var(--lime);
+    padding:7px 12px; border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:32px;
+    color:#fff;
+    margin-bottom:16px;
+  }
+  .hero h1 .hl{ color:var(--lime); }
+  .hero p{
+    font-size:16px;
+    color:rgba(255,255,255,0.8);
+    max-width:40ch;
+    margin-bottom:26px;
+  }
+  .btn{
+    display:flex; align-items:center; justify-content:center;
+    gap:8px;
+    font-family:'Manrope', sans-serif;
+    font-weight:800;
+    font-size:15.5px;
+    padding:17px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    text-align:center;
+  }
+  .btn-lime{ background:var(--lime); color:var(--forest); }
+  .btn-lime:active{ transform:scale(0.98); }
+  .btn-note{
+    text-align:center; font-size:12.5px; color:rgba(255,255,255,0.55);
+    margin-top:10px;
+  }
 
-.section {padding:60px 20px;text-align:center;}
+  /* signature: recurring cycle diagram */
+  .cycle-box{
+    margin-top:32px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius);
+    padding:22px 18px;
+  }
+  .cycle-box .mono{ color:rgba(255,255,255,0.5); display:block; margin-bottom:14px; text-align:center; }
+  #cycle-ring{
+    animation:spin 26s linear infinite;
+    transform-origin:100px 100px;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce){ #cycle-ring{ animation:none; } }
+  .cycle-caption{
+    display:flex; justify-content:space-between;
+    margin-top:14px; gap:8px;
+  }
+  .cycle-caption div{ flex:1; text-align:center; font-size:11.5px; color:rgba(255,255,255,0.65); }
+  .cycle-caption strong{ display:block; color:#fff; font-size:12.5px; margin-bottom:2px; }
 
-.video {max-width:800px;margin:auto;}
+  /* ---------- explainer ---------- */
+  .explainer{ padding:48px 0 10px; background:var(--paper); }
+  .section-head{ margin-bottom:26px; }
+  .section-head .mono{ color:var(--green-deep); margin-bottom:8px; display:block; }
+  .section-head h2{ font-family:'Archivo Black', sans-serif; font-size:24px; text-transform:uppercase; }
+  .explainer-card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px; margin-bottom:16px;
+  }
+  .explainer-card .ic{ margin-bottom:14px; }
+  .explainer-card h3{ font-size:16.5px; margin-bottom:6px; }
+  .explainer-card p{ font-size:14px; color:var(--ink-soft); }
 
-.stats {
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-margin-top:20px;
-}
+  /* ---------- steps ---------- */
+  .steps{ background:var(--mint); padding:46px 0 10px; }
+  .step{
+    display:flex; gap:16px; align-items:flex-start;
+    padding:20px 0; border-top:1px solid rgba(11,31,22,0.1);
+  }
+  .step:last-child{ border-bottom:1px solid rgba(11,31,22,0.1); }
+  .step-num{
+    font-family:'Archivo Black', sans-serif;
+    font-size:22px; color:var(--green);
+    min-width:38px;
+  }
+  .step h3{ font-size:16.5px; margin-bottom:4px; }
+  .step p{ font-size:14px; color:var(--ink-soft); }
 
-.stat {
-font-size:24px;
-font-weight:bold;
-color:#0d5c2f;
-}
+  /* ---------- benefits grid ---------- */
+  .benefits{ padding:48px 0 10px; }
+  .benefit-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:12px;
+  }
+  .benefit{
+    background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:16px; text-align:left;
+  }
+  .benefit .ic{ margin-bottom:10px; }
+  .benefit strong{ display:block; font-size:14px; margin-bottom:3px; }
+  .benefit span{ font-size:12.5px; color:var(--ink-soft); }
 
-.form-box {
-background:white;
-padding:30px;
-max-width:400px;
-margin:40px auto;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+  /* ---------- form ---------- */
+  .capture{ padding:50px 0 56px; }
+  .capture-panel{
+    background:var(--forest); color:#fff;
+    border-radius:24px; padding:30px 24px 26px;
+    position:relative; overflow:hidden;
+  }
+  .capture-panel::before{
+    content:""; position:absolute; top:-60px; right:-60px;
+    width:180px; height:180px; border-radius:50%;
+    background:radial-gradient(circle, rgba(198,255,77,0.25), transparent 70%);
+  }
+  .capture-panel h2{
+    font-family:'Archivo Black', sans-serif; font-size:23px;
+    text-transform:uppercase; margin-bottom:8px; position:relative;
+  }
+  .capture-panel > p{ font-size:14px; color:rgba(255,255,255,0.72); margin-bottom:22px; position:relative; }
+  .field{ margin-bottom:14px; position:relative; }
+  .field label{
+    display:block; font-size:12px; font-weight:700;
+    color:rgba(255,255,255,0.7); margin-bottom:6px;
+  }
+  .field input, .field select{
+    width:100%; padding:13px 14px;
+    border:1.5px solid rgba(255,255,255,0.18); border-radius:12px;
+    font-family:'Manrope', sans-serif; font-size:15px;
+    background:rgba(255,255,255,0.06); color:#fff;
+  }
+  .field select option{ color:#000; }
+  .field input::placeholder{ color:rgba(255,255,255,0.4); }
+  .field input:focus, .field select:focus{
+    outline:2px solid var(--lime); outline-offset:1px;
+    border-color:var(--lime);
+  }
+  .submit-btn{ width:100%; margin-top:6px; position:relative; }
+  .form-note{
+    font-size:12px; color:rgba(255,255,255,0.5); margin-top:12px; text-align:center; position:relative;
+  }
 
-input,button {
-width:100%;
-padding:12px;
-margin:10px 0;
-}
+  /* ---------- faq ---------- */
+  .trust{ background:#fff; padding:10px 0 56px; }
+  .faq-item{ padding:18px 0; border-bottom:1px solid var(--line); }
+  .faq-item h3{ font-size:15px; margin-bottom:6px; }
+  .faq-item p{ font-size:14px; color:var(--ink-soft); }
 
-button {
-background:#1db954;
-color:white;
-border:none;
-font-weight:bold;
-}
+  /* ---------- footer ---------- */
+  footer{ background:var(--forest); color:rgba(255,255,255,0.65); padding:30px 0 90px; }
+  footer .logo{ margin-bottom:10px; }
+  footer p{ font-size:13px; margin-bottom:4px; }
+  footer .socials{ margin-top:14px; display:flex; gap:14px; font-size:13px; }
+  footer .socials a{ text-decoration:underline; }
 
-.whatsapp {
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-color:white;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-}
-
-footer {
-font-size:12px;
-text-align:center;
-padding:20px;
-background:#eee;
-}
+  .float-wpp{
+    position:fixed; right:18px; bottom:18px; z-index:60;
+    width:56px; height:56px; border-radius:50%;
+    background:var(--lime); color:var(--forest);
+    display:flex; align-items:center; justify-content:center;
+    text-decoration:none; box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    font-size:26px;
+  }
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Transição energética</span><span>Renda recorrente</span><span>Sem vender nada</span><span>Sem estoque</span><span>Benefício real pra população</span>
+    <span>Transição energética</span><span>Renda recorrente</span><span>Sem vender nada</span><span>Sem estoque</span><span>Benefício real pra população</span>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo"><span class="logo-dot"></span>iGreen Energy</div>
+    <a class="top-cta" href="#cadastro">Quero ser licenciado</a>
+  </div>
+</div>
+
 <section class="hero">
-<h1>Atue no mercado de energia com um modelo estruturado e em expansão no Brasil</h1>
-<p>Conheça uma oportunidade de parceria comercial no setor energético</p>
+  <div class="wrap">
+    <span class="eyebrow mono">Oportunidade de negócio</span>
+    <h1>Você procura um modelo de negócio pra construir <span class="hl">renda recorrente</span> todo mês?</h1>
+    <p>Torne-se um licenciado iGreen Energy: leve desconto na conta de energia pra população e receba uma comissão recorrente, todo mês, por cada cadastro ativo. Sem vender produto. Sem estoque.</p>
+    <a href="#cadastro" class="btn btn-lime">Quero ser licenciado iGreen</a>
+    <p class="btn-note">Cadastro gratuito · Atuação em todo o Brasil</p>
 
-<a href="https://wa.me/5562993210298?text=Olá,%20quero%20entender%20a%20oportunidade"
-onclick="gtag('event','conversion',{'send_to':'AW-11190163063/wFILCJIpZTIzEPes8dep'});"
-class="btn">FALAR NO WHATSAPP</a>
+    <div class="cycle-box">
+      <span class="mono">Como a renda se repete todo mês</span>
+      <svg viewBox="0 0 200 200" width="100%" height="auto">
+        <circle cx="100" cy="100" r="72" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" fill="none"/>
+        <g id="cycle-ring">
+          <circle cx="100" cy="28" r="15" fill="#C6FF4D"/>
+          <circle cx="172" cy="100" r="15" fill="#22C55E"/>
+          <circle cx="100" cy="172" r="15" fill="#159A48"/>
+          <circle cx="28" cy="100" r="15" fill="#0B3D25" stroke="#C6FF4D" stroke-width="1"/>
+        </g>
+        <circle cx="100" cy="100" r="30" fill="#0B3D25" stroke="rgba(198,255,77,0.4)" stroke-width="1.5"/>
+        <text x="100" y="97" text-anchor="middle" fill="#C6FF4D" font-size="9" font-family="IBM Plex Mono" font-weight="600">TODO</text>
+        <text x="100" y="108" text-anchor="middle" fill="#C6FF4D" font-size="9" font-family="IBM Plex Mono" font-weight="600">MÊS</text>
+      </svg>
+      <div class="cycle-caption">
+        <div><strong>Apresenta</strong>o benefício</div>
+        <div><strong>Cadastra</strong>a conta</div>
+        <div><strong>Cliente</strong>economiza</div>
+        <div><strong>Você</strong>recebe comissão</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- VIDEO -->
-<section class="section">
-<h2>Entenda como funciona</h2>
+<section class="explainer">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Sobre a iGreen Energy</span>
+      <h2>O mercado que você vai representar</h2>
+    </div>
 
-<div class="video">
-<video controls width="100%">
-<source src="video.mp4" type="video/mp4">
-</video>
-</div>
+    <div class="explainer-card">
+      <svg class="ic" width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="14" r="7" fill="#C6FF4D"/>
+        <path d="M4 34c2-8 9-13 16-13s14 5 16 13" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <h3>Transição energética</h3>
+      <p>O Brasil vive a maior mudança da sua matriz elétrica em décadas. A Lei Federal 14.300 garante que qualquer pessoa tenha direito a desconto na conta de energia através da compensação gerada por usinas de energia limpa.</p>
+    </div>
+
+    <div class="explainer-card">
+      <svg class="ic" width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <rect x="6" y="10" width="10" height="7" rx="1.5" fill="#22C55E"/>
+        <rect x="18" y="10" width="10" height="7" rx="1.5" fill="#22C55E"/>
+        <rect x="6" y="19" width="10" height="7" rx="1.5" fill="#159A48"/>
+        <rect x="18" y="19" width="10" height="7" rx="1.5" fill="#159A48"/>
+        <line x1="17" y1="30" x2="17" y2="35" stroke="#0B3D25" stroke-width="2.5"/>
+      </svg>
+      <h3>Energia solar em larga escala</h3>
+      <p>A iGreen Energy trabalha com usinas parceiras que produzem energia solar em grande escala e distribuem os créditos para milhares de contas em todo o país — sem que ninguém precise instalar placa solar em casa.</p>
+    </div>
+
+    <div class="explainer-card">
+      <svg class="ic" width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <path d="M8 24a12 12 0 0 1 20-9" stroke="#22C55E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M32 16a12 12 0 0 1-20 9" stroke="#C6FF4D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M28 15l0-4 4 0" stroke="#22C55E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 25l0 4-4 0" stroke="#C6FF4D" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>Renda recorrente, não uma venda única</h3>
+      <p>Você não vende um produto. Você cadastra uma conta de energia que passa a ter desconto todo mês — e enquanto o cliente continuar economizando, você continua recebendo, mês após mês.</p>
+    </div>
+  </div>
 </section>
 
-<!-- AUTORIDADE -->
-<section class="section">
-<h2>Empresa consolidada no Brasil</h2>
-
-<div class="stats">
-<div class="stat">+600 MIL<br><small>Clientes</small></div>
-<div class="stat">4 ANOS<br><small>Mercado</small></div>
-</div>
-
-<img src="img/parceiros.png" style="max-width:300px;margin-top:20px;">
-
-<p>Atuação com grandes empresas do setor energético.</p>
+<section class="steps">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">O modelo na prática</span>
+      <h2>Como funciona ser licenciado</h2>
+    </div>
+    <div class="step">
+      <span class="step-num display">01</span>
+      <div>
+        <h3>Você apresenta o benefício</h3>
+        <p>Mostra pra pessoas e empresas que elas podem ter desconto na conta de energia, sem custo e sem instalar nada.</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="step-num display">02</span>
+      <div>
+        <h3>Você faz o cadastro</h3>
+        <p>Capta os dados da conta de energia e faz o cadastro direto com a iGreen Energy.</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="step-num display">03</span>
+      <div>
+        <h3>O cliente passa a economizar</h3>
+        <p>A conta cadastrada começa a receber desconto todo mês, automaticamente.</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="step-num display">04</span>
+      <div>
+        <h3>Você recebe sua comissão</h3>
+        <p>Por cada cadastro ativo, você recebe uma comissão recorrente, todos os meses — enquanto o cliente continuar com desconto.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- RECONHECIMENTO -->
-<section class="section">
-<h2>Reconhecimento no mercado</h2>
-
-<p>
-Empresa reconhecida por altos índices de satisfação dos clientes,
-com destaque em plataformas como Reclame Aqui.
-</p>
-
-<p>
-Certificação de qualidade no atendimento e experiência do consumidor.
-</p>
+<section class="benefits">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Por que ser licenciado iGreen</span>
+      <h2>O que você não precisa ter</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit">
+        <svg class="ic" width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14h16M14 6v16" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" transform="rotate(45 14 14)"/></svg>
+        <strong>Sem vender produto</strong>
+        <span>Você leva um benefício, não empurra uma venda.</span>
+      </div>
+      <div class="benefit">
+        <svg class="ic" width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="9" width="18" height="12" rx="2" stroke="#22C55E" stroke-width="2"/><path d="M9 9V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3" stroke="#22C55E" stroke-width="2"/></svg>
+        <strong>Sem estoque</strong>
+        <span>Nada pra comprar, guardar ou entregar.</span>
+      </div>
+      <div class="benefit">
+        <svg class="ic" width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3v22M6 9h16M6 19h16" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/></svg>
+        <strong>Atuação nacional</strong>
+        <span>Capte contas em qualquer estado do Brasil.</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- BENEFÍCIOS -->
-<section class="section">
-<h2>Soluções e benefícios</h2>
-
-<p>✔ Possibilidade de economia na conta de energia</p>
-<p>✔ Modelo sem necessidade de instalação</p>
-<p>✔ Acesso a benefícios exclusivos</p>
-<p>✔ Mercado em expansão</p>
+<section class="capture" id="cadastro">
+  <div class="wrap">
+    <div class="capture-panel">
+      <h2>Quero ser licenciado</h2>
+      <p>Preencha seus dados. Você será direcionado ao WhatsApp oficial da iGreen Energy com tudo já preenchido.</p>
+      <form id="form-licenciado">
+        <div class="field">
+          <label for="l-nome">Nome completo</label>
+          <input id="l-nome" required type="text" placeholder="Seu nome">
+        </div>
+        <div class="field">
+          <label for="l-whats">WhatsApp</label>
+          <input id="l-whats" required type="tel" placeholder="(DDD) 9 9999-9999">
+        </div>
+        <div class="field">
+          <label for="l-cidade">Cidade / Estado</label>
+          <input id="l-cidade" required type="text" placeholder="Ex: Goiânia / GO">
+        </div>
+        <div class="field">
+          <label for="l-exp">Já trabalhou com vendas ou captação?</label>
+          <select id="l-exp" required>
+            <option value="">Selecione</option>
+            <option>Sim</option>
+            <option>Não, mas tenho interesse</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="l-disp">Quanto tempo por semana você tem disponível?</label>
+          <select id="l-disp" required>
+            <option value="">Selecione</option>
+            <option>Poucas horas, nas folgas</option>
+            <option>Meio período</option>
+            <option>Período integral</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="l-email">E-mail</label>
+          <input id="l-email" required type="email" placeholder="seuemail@exemplo.com">
+        </div>
+        <button class="btn btn-lime submit-btn" type="submit">Quero saber mais como funciona</button>
+      </form>
+    </div>
+  </div>
 </section>
 
-<!-- IMAGEM IMPACTO -->
-<section class="section">
-<img src="img/energia.jpg" style="width:100%;border-radius:10px;">
+<section class="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Perguntas frequentes</span>
+      <h2>Antes de chamar no zap</h2>
+    </div>
+    <div class="faq-item">
+      <h3>Preciso vender alguma coisa?</h3>
+      <p>Não. Você apresenta um benefício real — desconto na conta de energia — e faz o cadastro. Não existe produto pra vender ou entregar.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Preciso investir algum valor?</h3>
+      <p>Não. O cadastro de licenciado é gratuito, sem taxa de adesão e sem fidelidade.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Como recebo a comissão?</h3>
+      <p>Você recebe uma comissão recorrente por cada conta de energia cadastrada e ativa, todos os meses, enquanto o cliente continuar com o desconto.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Funciona em qualquer cidade?</h3>
+      <p>Sim. A iGreen Energy atende em todo o território nacional — todos os estados do Brasil.</p>
+    </div>
+  </div>
 </section>
 
-<!-- LINHA DO TEMPO -->
-<section class="section">
-<h2>Crescimento e expansão</h2>
-<img src="img/linha-tempo.png" style="width:100%;max-width:800px;">
-</section>
-
-<!-- FORM -->
-<div class="form-box">
-<h3>Receba mais informações</h3>
-
-<form onsubmit="redirect(event)">
-<input type="text" placeholder="Nome" required>
-<input type="email" placeholder="Email" required>
-<input type="tel" placeholder="Telefone" required>
-
-<button>QUERO SABER MAIS</button>
-</form>
-</div>
-
-<!-- CTA FINAL -->
-<section class="hero">
-<h2>Fale agora e entenda se faz sentido para você</h2>
-
-<a href="https://wa.me/5562993210298?text=Olá,%20quero%20participar"
-onclick="gtag('event','conversion',{'send_to':'AW-11190163063/wFILCJIpZTIzEPes8dep'});"
-class="btn">CHAMAR NO WHATSAPP</a>
-</section>
-
-<!-- BOTÃO FLUTUANTE -->
-<a class="whatsapp"
-href="https://wa.me/5562993210298"
-onclick="gtag('event','conversion',{'send_to':'AW-11190163063/wFILCJIpZTIzEPes8dep'});">
-💬
-</a>
-
-<!-- RODAPÉ -->
 <footer>
-Este site possui caráter informativo sobre oportunidade de parceria comercial.
-Resultados podem variar de acordo com o desempenho individual.
-<br><br>
-Este site não possui vínculo direto com anúncios oficiais da empresa.
-<br><br>
-<a href="politica.html">Política de Privacidade</a> |
-<a href="termos.html">Termos de Uso</a>
+  <div class="wrap">
+    <div class="logo"><span class="logo-dot"></span>iGreen Energy</div>
+    <p>WhatsApp oficial: (62) 99321-0298</p>
+    <p>Transição energética, com renda recorrente, em todo o Brasil.</p>
+    <div class="socials">
+      <a href="https://instagram.com/soualexandre_oficial" target="_blank" rel="noopener">Instagram</a>
+      <a href="#">TikTok</a>
+    </div>
+  </div>
 </footer>
 
+<a class="float-wpp" href="https://wa.me/5562993210298?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20e%20quero%20saber%20mais%20sobre%20ser%20licenciado%20iGreen%20Energy." aria-label="Falar no WhatsApp" target="_blank" rel="noopener">☎</a>
+
 <script>
-function redirect(e){
-e.preventDefault();
+  const WPP_NUMBER = "5562993210298";
 
-gtag('event','conversion',{'send_to':'AW-11190163063/wFILCJIpZTIzEPes8dep'});
-
-setTimeout(function(){
-window.location.href="https://wa.me/5562993210298";
-},800);
-}
+  document.getElementById("form-licenciado").addEventListener("submit", function(e){
+    e.preventDefault();
+    const nome = document.getElementById("l-nome").value;
+    const whats = document.getElementById("l-whats").value;
+    const cidade = document.getElementById("l-cidade").value;
+    const exp = document.getElementById("l-exp").value;
+    const disp = document.getElementById("l-disp").value;
+    const email = document.getElementById("l-email").value;
+    const msg = `Olá! Quero ser licenciado iGreen Energy.%0A%0ANome: ${nome}%0AWhatsApp: ${whats}%0ACidade/Estado: ${cidade}%0AExperiência com vendas/captação: ${exp}%0ADisponibilidade: ${disp}%0AE-mail: ${email}`;
+    window.open(`https://wa.me/${WPP_NUMBER}?text=${encodeURIComponent(decodeURIComponent(msg))}`, "_blank");
+  });
 </script>
 
 </body>
